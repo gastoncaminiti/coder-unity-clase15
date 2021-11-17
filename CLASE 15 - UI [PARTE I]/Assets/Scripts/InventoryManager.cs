@@ -10,17 +10,45 @@ public class InventoryManager : MonoBehaviour
      private  Queue inventoryTwo;
      Dictionary<string, GameObject> inventoryThree;
 
+     [SerializeField] private int[] foodQuantity = { 0, 0, 0 };
+
     void Start()
     {
         inventoryOne = new Stack();
         inventoryTwo = new Queue();
         inventoryThree = new Dictionary<string, GameObject>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void CountFood(GameObject food)
+    {
+        FoodController f = food.GetComponent<FoodController>();
+        switch (f.GetTypeFood())
+        {
+            case GameManager.typesFood.Chesee:
+                foodQuantity[0]++;
+                break;
+            case GameManager.typesFood.Cookie:
+                foodQuantity[1]++;
+                break;
+            case GameManager.typesFood.Egg:
+                foodQuantity[2]++;
+                break;
+            default:
+                Debug.Log("NO SE PUEDE CONTAR");
+                break;
+        }
+    }
+
+    public int[] GetFoodQuantity()
+    {
+        return foodQuantity;
     }
 
     public void AddInventoryOne(GameObject item)

@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 
     //SCORE
     public static int score;
+    //ENUMERACION PUBLICA
+    public enum typesFood { Chesee , Cookie, Egg };
 
     private int scoreInstanciado; 
 

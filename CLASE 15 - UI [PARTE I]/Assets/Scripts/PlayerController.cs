@@ -123,6 +123,7 @@ public class PlayerController : MonoBehaviour
             //mgInventory.SeeInventoryTwo();
             mgInventory.AddInventoryThree(food.name, food);
             mgInventory.SeeInventoryThree();
+            mgInventory.CountFood(food);
         }
     }
 
